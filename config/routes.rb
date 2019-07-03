@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  # shalliw nesting 
+  # short shallow nesting 
   resources :posts do
-    resources :comments, only: [:index, :new, :create]
+    resources :comments, shallow: true
   end
 
-  resources :comments, except: [:index, :new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
